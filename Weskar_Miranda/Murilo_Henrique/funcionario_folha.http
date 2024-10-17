@@ -1,0 +1,54 @@
+@base_url = http://localhost:5282
+# FUNCIONÁRIO ######################################
+
+### Criação de um novo funcionário
+POST {{base_url}}/funcionario/cadastrar
+Content-Type: application/json
+
+{
+    "nome": "Seu nome1",
+    "cpf" : "12345678913"
+}
+
+### Obtenção de todos os funcionários
+GET {{base_url}}/funcionario/listar
+
+### Deletar Funcionario
+DELETE  {{base_url}}/funcionario/deletar/1
+
+# FOLHA ############################################
+
+### Criação de uma nova folha
+POST {{base_url}}/folhapagamento/cadastrar
+Content-Type: application/json
+
+{
+    "valor": 50,
+    "quantidade" : 1000,
+    "mes" : 10,
+    "ano" : 2023,
+    "funcionarioId" : 5
+}
+
+### Obtenção de todas as folhas
+GET {{base_url}}/folhapagamento/listar
+
+### Obtenção de uma folha
+GET {{base_url}}/folhapagamento/buscar/12345678913/10/2023
+
+### Filtrar uma folha
+GET {{base_url}}/folhapagamento/filtrar/10/2023
+
+### Deletar Funcionario
+DELETE  {{base_url}}/folhapagamento/deletar/1
+
+
+
+
+
+
+
+
+
+
+
